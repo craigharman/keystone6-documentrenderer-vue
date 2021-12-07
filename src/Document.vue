@@ -1,14 +1,18 @@
 <script>
-import Vue from 'vue'
-import Fragment from 'vue-fragment'
-Vue.use(Fragment.Plugin)
+import { Fragment } from 'vue-fragment'
 
-export const block = Vue.component('Block', {
+export const block = {
+		components: {
+			Fragment
+		},
 		props: {
 			block: {
 				type: Object,
 				required: true,
 			},
+		},
+		mount: function() {
+
 		},
 		render: function (h) {
 			let node = this.block;
@@ -43,7 +47,7 @@ export const block = Vue.component('Block', {
 			}
 					
 
-			const children = node.children.map((x, i) => ( <Block block={x} key={i} /> ));
+			const children = node.children.map((x, i) => ( <block block={x} key={i} /> ));
 			switch (node.type) {
 				case "blockquote": {
 					return <blockquote children={children} />;
@@ -132,17 +136,22 @@ export const block = Vue.component('Block', {
 			}
 			return <fragment>{children}</fragment>;
 		},
-	});
+	};
 
-export default Vue.component('DocumentReader', {
+export default {
 	props: {
 		document: {
 			type: Array,
 			required: true,
 		}
 	},
+	components: {
+		block, Fragment
+	},
+	mount: function() {
+
+	},
 	render: function(h) {
-		console.log(this.document)
 		const nodes = []
 		this.document.forEach((node, index) => {
 			nodes.push(<block block={node} key={index} />)
@@ -150,5 +159,5 @@ export default Vue.component('DocumentReader', {
 
 		return <fragment>{nodes}</fragment>
 	}
-})
+};
 </script>
