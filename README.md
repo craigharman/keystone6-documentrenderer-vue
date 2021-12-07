@@ -29,3 +29,11 @@ Then use the component in your Vue template:
 ```
 
 Where `document` is a Keystone 6 document object from your GraphQL query.
+
+## Development
+
+Bundle with Bili:
+
+```bash
+npx bili --bundle-node-modules
+```
