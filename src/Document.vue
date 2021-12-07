@@ -1,9 +1,3 @@
-<template>
-	<div>
-		<block v-for="(block, index) in document" :key="index" :block="block"></block>
-	</div>
-</template>
-
 <script>
 import Vue from 'vue'
 import Fragment from 'vue-fragment'
@@ -147,8 +141,14 @@ export default Vue.component('DocumentReader', {
 			required: true,
 		}
 	},
-	components: {
-		block,
+	render: function(h) {
+		console.log(this.document)
+		const nodes = []
+		this.document.forEach((node, index) => {
+			nodes.push(<block block={node} key={index} />)
+		});
+
+		return <fragment>{nodes}</fragment>
 	}
 })
 </script>

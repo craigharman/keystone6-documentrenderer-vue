@@ -1,6 +1,6 @@
 {
 	"name": "keystone6-documentreader-vue",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"author": "Craig Harman",
 	"main": "dist/keystone6-documentreader-vue.umd.js",
 	"module": "dist/keystone6-documentreader-vue.esm.js",
@@ -10,14 +10,10 @@
 	},
 	"scripts": {
 		"dev": "vue serve Document.vue",
-		"build": "bili --name wrapper --plugin vue --vue.css false"
+		"build": "bili --name index --plugin vue --vue.css false"
 	},
 	"devDependencies": {
-		"@rollup/plugin-buble": "^0.21.3",
-		"@rollup/plugin-commonjs": "^11.1.0",
 		"bili": "^5.0.5",
-		"rollup": "^1.17.0",
-		"rollup-plugin-vue": "^5.1.9",
 		"vue": "^2.6.14",
 		"vue-template-compiler": "^2.6.14"
 	},
