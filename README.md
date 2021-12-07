@@ -13,11 +13,11 @@ npm install keystone6-documentreader-vue
 Then in your Vue component/page:
 
 ```js
-import KeystoneDocument from "keystone6-documentreader-vue";
+import DocumentReader from "~/components/KeystoneDocument/Document";
 
 export default {
 	components: {
-		KeystoneDocument,
+		DocumentReader,
 	},
 };
 ```
@@ -25,10 +25,12 @@ export default {
 Then use the component in your Vue template:
 
 ```html
-<KeystoneDocument :document="$page.content.document" />
+<DocumentReader :document="$page.content.document" />
 ```
 
 Where `document` is a Keystone 6 document object from your GraphQL query.
+
+> All elements are unstyled, it is up to you to apply CSS.
 
 ## Development
 
