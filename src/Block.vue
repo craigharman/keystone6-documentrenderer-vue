@@ -2,7 +2,7 @@
 A Vue version of the Keystone Document component (that is written in React).
 -->
 
-<script language="babel">
+<script>
 import Vue from 'vue'
 import Fragment from 'vue-fragment'
 Vue.use(Fragment.Plugin)
