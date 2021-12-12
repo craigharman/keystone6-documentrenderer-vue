@@ -31,7 +31,7 @@ export const block = {
 			};
 
 			if (typeof node.text === "string") {
-				let child = <fragment>{node.text}</fragment>;
+				let child = <Fragment>{node.text}</Fragment>;
 				Object.keys(renderers.inline).forEach((markName) => {
 					if (
 						markName !== "link" &&
@@ -50,7 +50,7 @@ export const block = {
 			const children = node.children.map((x, i) => ( <block block={x} key={i} /> ));
 			switch (node.type) {
 				case "blockquote": {
-					return <blockquote children={children} />;
+					return <blockquote>{children}</blockquote>;
 				}
 				case "paragraph": {
 					return (
@@ -134,7 +134,7 @@ export const block = {
 					);
 				}
 			}
-			return <fragment>{children}</fragment>;
+			return <Fragment>{children}</Fragment>;
 		},
 	};
 
@@ -157,7 +157,7 @@ export default {
 			nodes.push(<block block={node} key={index} />)
 		});
 
-		return <fragment>{nodes}</fragment>
+		return <Fragment>{nodes}</Fragment>
 	}
 };
 </script>
