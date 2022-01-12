@@ -1,11 +1,11 @@
 // Import vue component
-import documentReader from "./Document.vue"
+import documentRenderer from "./Document.vue"
 
 // Declare install function executed by Vue.use()
 export function install(Vue) {
 	if (install.installed) return
 	install.installed = true
-	Vue.component("DocumentReader", documentReader)
+	Vue.component("DocumentRenderer", documentRenderer)
 }
 
 // Create module definition for Vue.use()
@@ -25,4 +25,4 @@ if (GlobalVue) {
 }
 
 // To allow use as module (npm/webpack/etc.) export component
-export default documentReader
+export default documentRenderer
